@@ -22,3 +22,8 @@ class Game
   def add_kill(killer, victim, mean)
     @kills.push(Kill.new(killer, victim, mean))
   end
+
+  def create_or_get_player(name)
+    add_player(name) unless @players.key?(name)
+    @players[name]
+  end
