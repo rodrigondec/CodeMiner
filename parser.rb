@@ -14,7 +14,11 @@ class LogParser
     end
     file.close
     @games = []
+    parse
   end
+
+
+  private
 
   def parse
     game = nil
