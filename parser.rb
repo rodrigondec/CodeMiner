@@ -17,6 +17,8 @@ class LogParser
     parse
   end
 
+  attr_reader :games
+
   def info
     @games.each do |game|
       pp game.info
