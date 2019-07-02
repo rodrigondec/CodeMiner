@@ -27,3 +27,12 @@ class Game
     add_player(name) unless @players.key?(name)
     @players[name]
   end
+
+  def get_player(name)
+    if name == '<world>'
+      nil
+    else
+      create_or_get_player(name)
+    end
+  end
+end
