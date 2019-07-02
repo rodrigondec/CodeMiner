@@ -19,7 +19,7 @@ if $PROGRAM_NAME == __FILE__
     kills_by_means = kills_by_means.sort_by { |mean, count| -count }
     kills_by_means.to_h
     h = {}
-    h[game_index] = { 'kills_by_means':  kills_by_means}
+    h[game_index] = { 'kills_by_means': kills_by_means }
     pp h
   end
 end
