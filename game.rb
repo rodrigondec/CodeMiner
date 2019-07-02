@@ -14,6 +14,7 @@ class Game
   end
 
   attr_reader :players
+  attr_reader :kills
 
   def info
     {
