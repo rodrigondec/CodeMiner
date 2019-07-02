@@ -31,6 +31,8 @@ class LogParser
       if line.include?('InitGame:')
         game = Game.new(line)
         @games.push(game)
+      elsif line.include?('ClientUserinfoChanged:')
+        game.process_user_info_line(line)
       elsif line.include?('Kill:')
         game.process_kill_line(line)
       end
