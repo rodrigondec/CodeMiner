@@ -77,7 +77,7 @@ class Game
     killer = get_player(killer_name)
     victim = get_player(victim_name)
 
-    if killer
+    if killer && killer != victim
       killer.increment_kill
     else
       victim.decrement_kill
