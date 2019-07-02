@@ -34,6 +34,16 @@ class Game
     process_kill(killer_name, victim_name, mean)
   end
 
+  def process_user_info_line(user_info_line)
+    start_name_index = user_info_line.index('\\') + 1
+
+    end_name_index = user_info_line[start_name_index..-1].index('\\') +
+        start_name_index - 1
+
+    name = user_info_line[start_name_index..end_name_index]
+    create_or_get_player(name)
+  end
+
   private
 
   def players_info
