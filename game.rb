@@ -13,6 +13,8 @@ class Game
     @kills = []
   end
 
+  attr_reader :players
+
   def info
     {
       total_kills: @kills.length,
@@ -42,7 +44,7 @@ class Game
     start_name_index = user_info_line.index('\\') + 1
 
     end_name_index = user_info_line[start_name_index..-1].index('\\') +
-        start_name_index - 1
+                     start_name_index - 1
 
     name = user_info_line[start_name_index..end_name_index]
     create_or_get_player(name)
