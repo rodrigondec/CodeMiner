@@ -12,4 +12,13 @@ class Game
     @players = {}
     @kills = []
   end
-end
+
+  private
+
+  def add_player(name)
+    @players[name] = Player.new(name)
+  end
+
+  def add_kill(killer, victim, mean)
+    @kills.push(Kill.new(killer, victim, mean))
+  end
