@@ -13,6 +13,19 @@ class Game
     @kills = []
   end
 
+  def process_kill_line(kill_line)
+    line_array = kill_line.split
+
+    killed_index = line_array.index('killed')
+    by_index = line_array.index('by')
+
+    killer_name = line_array[killed_index - 1]
+    victim_name = line_array[killed_index + 1]
+    mean = line_array[by_index + 1]
+
+    process_kill(killer_name, victim_name, mean)
+  end
+
   private
 
   def add_player(name)
@@ -47,18 +60,5 @@ class Game
     end
 
     add_kill(killer, victim, mean)
-  end
-
-  def process_kill_line(kill_line)
-    line_array = kill_line.split
-
-    killed_index = line_array.index('killed')
-    by_index = line_array.index('by')
-
-    killer_name = line_array[killed_index - 1]
-    victim_name = line_array[killed_index + 1]
-    mean = line_array[by_index + 1]
-
-    process_kill(killer_name, victim_name, mean)
   end
 end
