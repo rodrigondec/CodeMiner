@@ -7,7 +7,7 @@ if $PROGRAM_NAME == __FILE__
   parser.games.each do |game|
     game.players.each_value do |player|
       if players.key?(player.name)
-        players[player.name].merge_kills(player.kills)
+        players[player.name].add_kills(player.kills)
       else
         players[player.name] = player
       end

@@ -18,7 +18,7 @@ class Player
     @kills -= 1
   end
 
-  def merge_kills(kills)
-    @kills += kills
+  def add_kills(number)
+    @kills += number
   end
 end
