@@ -17,4 +17,8 @@ class Player
   def decrement_kill
     @kills -= 1
   end
+
+  def merge_kills(kills)
+    @kills += kills
+  end
 end
