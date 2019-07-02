@@ -13,6 +13,14 @@ class Game
     @kills = []
   end
 
+  def info
+    {
+      total_kills: @kills.length,
+      players: players_info,
+      kills: kills_info
+    }
+  end
+
   def process_kill_line(kill_line)
     line_array = kill_line.split
 
