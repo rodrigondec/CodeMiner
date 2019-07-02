@@ -17,6 +17,11 @@ class LogParser
     parse
   end
 
+  def info
+    @games.each do |game|
+      pp game.info
+    end
+  end
 
   private
 
