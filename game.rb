@@ -28,6 +28,14 @@ class Game
 
   private
 
+  def players_info
+    info = []
+    @players.each_value do |player|
+      info.push(player.name)
+    end
+    info
+  end
+
   def add_player(name)
     @players[name] = Player.new(name)
   end
