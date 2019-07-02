@@ -21,6 +21,10 @@ class Game
     }
   end
 
+  def ranking
+    kills_info.sort_by { |info| -info[:kills] }
+  end
+
   def process_kill_line(kill_line)
     line_array = kill_line.split
 
