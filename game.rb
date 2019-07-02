@@ -36,6 +36,14 @@ class Game
     info
   end
 
+  def kills_info
+    info = []
+    @players.each_value do |player|
+      info.push(name: player.name, kills: player.kills)
+    end
+    info
+  end
+
   def add_player(name)
     @players[name] = Player.new(name)
   end
