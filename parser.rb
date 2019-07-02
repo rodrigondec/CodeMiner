@@ -15,4 +15,16 @@ class LogParser
     file.close
     @games = []
   end
+
+  def parse
+    game = nil
+    @data.each do |line|
+      if line.include?('InitGame:')
+        game = Game.new(line)
+        @games.push(game)
+      elsif line.include?('Kill:')
+        game.process_kill_line(line)
+      end
+    end
+  end
 end
