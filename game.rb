@@ -35,4 +35,18 @@ class Game
       create_or_get_player(name)
     end
   end
+
+  def process_kill(killer_name, victim_name, mean)
+    killer = get_player(killer_name)
+    victim = get_player(victim_name)
+
+    if killer
+      killer.increment_kill
+    else
+      victim.decrement_kill
+    end
+
+    add_kill(killer, victim, mean)
+  end
+
 end
