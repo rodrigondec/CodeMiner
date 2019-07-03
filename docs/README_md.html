@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Codeminer+Quake+Log+Parser">Codeminer Quake Log Parser</a>
+    <li><a href="#label-Setup">Setup</a>
+    <li><a href="#label-Running">Running</a>
+    <li><a href="#label-Tasks">Tasks</a>
+    <li><a href="#label-Documentation">Documentation</a>
+    <li><a href="#label-Player">Player</a>
+    <li><a href="#label-Attributes">Attributes</a>
+    <li><a href="#label-name">name</a>
+    <li><a href="#label-kills">kills</a>
+    <li><a href="#label-Methods">Methods</a>
+    <li><a href="#label-increment_kill">increment_kill</a>
+    <li><a href="#label-decrement_kill">decrement_kill</a>
+    <li><a href="#label-add_kills">add_kills</a>
+    <li><a href="#label-Kill">Kill</a>
+    <li><a href="#label-Attributes">Attributes</a>
+    <li><a href="#label-killer">killer</a>
+    <li><a href="#label-victim">victim</a>
+    <li><a href="#label-mean">mean</a>
+    <li><a href="#label-Game">Game</a>
+    <li><a href="#label-Attributes">Attributes</a>
+    <li><a href="#label-name">name</a>
+    <li><a href="#label-players">players</a>
+    <li><a href="#label-Methods">Methods</a>
+    <li><a href="#label-info">info</a>
+    <li><a href="#label-players_info">players_info</a>
+    <li><a href="#label-kills_info">kills_info</a>
+    <li><a href="#label-ranking">ranking</a>
+    <li><a href="#label-add_player">add_player</a>
+    <li><a href="#label-add_kill">add_kill</a>
+    <li><a href="#label-create_or_get_player">create_or_get_player</a>
+    <li><a href="#label-get_player">get_player</a>
+    <li><a href="#label-process_kill">process_kill</a>
+    <li><a href="#label-process_user_info_line">process_user_info_line</a>
+    <li><a href="#label-process_kill_line">process_kill_line</a>
+    <li><a href="#label-LogParser">LogParser</a>
+    <li><a href="#label-Attributes">Attributes</a>
+    <li><a href="#label-data">data</a>
+    <li><a href="#label-games">games</a>
+    <li><a href="#label-Methods">Methods</a>
+    <li><a href="#label-info">info</a>
+    <li><a href="#label-parse">parse</a>
+    <li><a href="#label-Task1.rb">Task1.rb</a>
+    <li><a href="#label-Task2.rb">Task2.rb</a>
+    <li><a href="#label-Getting+all+players+from+all+games">Getting all players from all games</a>
+    <li><a href="#label-The+kills+from+player+from+each+game+has+to+be+summed">The kills from player from each game has to be summed</a>
+    <li><a href="#label-Parsing+hash+to+list+of+hashs">Parsing hash to list of hashs</a>
+    <li><a href="#label-Ordering+list+for+global+ranking">Ordering list for global ranking</a>
+    <li><a href="#label-Printing+global+ranking">Printing global ranking</a>
+    <li><a href="#label-Task_plus.rb">Task_plus.rb</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./LICENSE_md.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./games_log.html">games.log</a>
+  
+    <li><a href="./makefile.html">makefile</a>
+  
+    <li><a href="./tests/data/game_1_log.html">game_1.log</a>
+  
+    <li><a href="./tests/data/game_2_log.html">game_2.log</a>
+  
+    <li><a href="./tests/data/games_1-2_log.html">games_1-2.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Codeminer+Quake+Log+Parser">Codeminer Quake Log Parser<span><a href="#label-Codeminer+Quake+Log+Parser">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Project made in Ruby for Codeminer interview</p>
+
+<h1 id="label-Setup">Setup<span><a href="#label-Setup">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Install Ruby 2.3 from the <a
+href="https://www.ruby-lang.org/en/documentation/installation/">official
+documentation</a></p>
+
+<h2 id="label-Running">Running<span><a href="#label-Running">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Tasks">Tasks<span><a href="#label-Tasks">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>run the files <code>task1.rb</code>, <code>task2.rb</code> and
+<code>task_plus.rb</code> with the command <code>ruby
+file_name_here.rb</code>.</p>
+
+<blockquote>
+<p>If there&#39;s make support on your OS you may use <code>make task.1</code>
+or <code>make task.2</code> or <code>make task.plus</code>.</p>
+
+<h3 id="label-Tests">Tests<span><a href="#label-Tests">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>run the file <code>test_runner.rb</code> with the command <code>ruby
+test_runner.rb</code>. If there&#39;s make support on your OS you may use
+<code>make test</code>.</p>
+</blockquote>
+
+<h1 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This project has the following entities &amp; files: - <a
+href="#player">Player</a> - <a href="#kill">Kill</a> - <a
+href="#game">Game</a> - <a href="#logparser">LogParser</a> - <a
+href="#task1rb">task1.rb</a> - <a href="#task2rb">task2.rb</a> - <a
+href="#task_plusrb">task_plus.rb</a></p>
+
+<h1 id="label-Player"><a href="Player.html">Player</a><span><a href="#label-Player">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<blockquote>
+<p>Class Diagram <img src="docs/player.png?raw=true"></p>
+</blockquote>
+
+<h2 id="label-Attributes">Attributes<span><a href="#label-Attributes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-name">name<span><a href="#label-name">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>String containing the player name</p>
+
+<h3 id="label-kills">kills<span><a href="#label-kills">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Number containing the count of player kills</p>
+
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-increment_kill">increment_kill<span><a href="#label-increment_kill">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Increments the attribute <code>kills</code> counter by <code>1</code></p>
+
+<h3 id="label-decrement_kill">decrement_kill<span><a href="#label-decrement_kill">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Decrements the attribute <code>kills</code> counter by <code>1</code></p>
+
+<h3 id="label-add_kills">add_kills<span><a href="#label-add_kills">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - number</p>
+
+<p>Increments the attribute <code>kills</code> counter by a provided
+<code>number</code></p>
+
+<h1 id="label-Kill"><a href="Kill.html">Kill</a><span><a href="#label-Kill">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<blockquote>
+<p>Class Diagram <img src="docs/kill.png?raw=true"></p>
+</blockquote>
+
+<h2 id="label-Attributes">Attributes<span><a href="#label-Attributes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-killer">killer<span><a href="#label-killer">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><a href="Player.html">Player</a> instance of class <a
+href="#player">Player</a> who made the kill. Value can be <code>nil</code>
+in case of <code>&lt;world&gt;</code> kill</p>
+
+<h3 id="label-victim">victim<span><a href="#label-victim">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><a href="Player.html">Player</a> instance of class <a
+href="#player">Player</a> who has been killed</p>
+
+<h3 id="label-mean">mean<span><a href="#label-mean">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>String containing death cause name</p>
+
+<h1 id="label-Game"><a href="Game.html">Game</a><span><a href="#label-Game">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<blockquote>
+<p>Class Diagram <img src="docs/game.png?raw=true"></p>
+</blockquote>
+
+<h2 id="label-Attributes">Attributes<span><a href="#label-Attributes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-name">name<span><a href="#label-name">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>String containing game name</p>
+
+<h3 id="label-players">players<span><a href="#label-players">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Hash of players on the game. The key of the hash is the name of player and
+the value is a <code>Player</code> instance.</p>
+
+<blockquote>
+<p>image example <img src="docs/players_hash.png?raw=true"></p>
+
+<h3 id="label-kills">kills<span><a href="#label-kills">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>List of kills (instance of class <a href="#kill">Kill</a>) on the game</p>
+</blockquote>
+
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-info">info<span><a href="#label-info">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Return a hash containing <code>total_kills</code>, <code>players</code> and
+<code>kills</code></p>
+
+<blockquote>
+<p>image example <img src="docs/game_info.png?raw=true"></p>
+</blockquote>
+
+<h3 id="label-players_info">players_info<span><a href="#label-players_info">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Return a list containing the name of each player on the game. Used on <a
+href="#info">info</a> method</p>
+
+<h3 id="label-kills_info">kills_info<span><a href="#label-kills_info">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Return a list of hashs containing the pair <code>:name =&gt; String,
+:kills=&gt; Number</code> from the players. Used on <a
+href="#info">info</a> method</p>
+
+<h3 id="label-ranking">ranking<span><a href="#label-ranking">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Return the <a href="#kills_info">kills_info</a> list sorted by
+<code>-:kills</code></p>
+
+<h3 id="label-add_player">add_player<span><a href="#label-add_player">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - name: String</p>
+
+<p>Create a new <a href="#player">Player</a> instance and save it on <a
+href="#players">players</a> attribute</p>
+
+<h3 id="label-add_kill">add_kill<span><a href="#label-add_kill">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - killer: <a href="#player">Player</a> instance or
+<code>nil</code> - victim: <a href="#player">Player</a> instance - mean:
+String</p>
+
+<p>Create a new <a href="#kill">Kill</a> instance and save it on <a
+href="#kills">kills</a> attribute</p>
+
+<h3 id="label-create_or_get_player">create_or_get_player<span><a href="#label-create_or_get_player">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - name: String</p>
+
+<p>Call method <a href="#add_player">add_player</a> if there&#39;s no such
+player or return the player instance</p>
+
+<h3 id="label-get_player">get_player<span><a href="#label-get_player">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - name: String</p>
+
+<p>Return <code>nil</code> if <code>name == &#39;&lt;world&gt;&#39;</code> or
+call method <a href="#create_or_get_player">create_or_get_player</a></p>
+
+<h3 id="label-process_kill">process_kill<span><a href="#label-process_kill">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - killer_name: String - victim_name: String - mean:
+String</p>
+
+<p>Create or get killer &amp; victim <a href="#player">Player</a> instances.
+Increment or decrement the players <a href="#kills">kills counter</a>. Call
+method <a href="#add_kill">add_kill</a>.</p>
+
+<h3 id="label-process_user_info_line">process_user_info_line<span><a href="#label-process_user_info_line">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - user_info_line: String</p>
+
+<p>Create a <a href="#player">Player</a> instance getting the name from line</p>
+
+<blockquote>
+<p>line example <code>20:34 ClientUserinfoChanged: 2
+n\Isgalamido\t\0\model\xian/default\hmodel\xian/default\g_redteam\g_blueteam\c1\4\c2\5\hc\100\w\0\l\0\tt\0\tl\0</code></p>
+</blockquote>
+
+<h3 id="label-process_kill_line">process_kill_line<span><a href="#label-process_kill_line">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>receive the parameters: - kill_line: String</p>
+
+<p>Identify <code>killer_name</code>, <code>victim_name</code> &amp;
+<code>mean</code>. Call method <a href="#process_kill">process_kill</a>.</p>
+
+<blockquote>
+<p>line example <code>20:54 Kill: 1022 2 22: &lt;world&gt; killed Isgalamido
+by MOD_TRIGGER_HURT</code></p>
+</blockquote>
+
+<h1 id="label-LogParser"><a href="LogParser.html">LogParser</a><span><a href="#label-LogParser">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<blockquote>
+<p>Class Diagram <img src="docs/parser.png?raw=true"></p>
+</blockquote>
+
+<h2 id="label-Attributes">Attributes<span><a href="#label-Attributes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-data">data<span><a href="#label-data">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>List of strings extracted from the <a href="games_log.html">games.log</a>
+file</p>
+
+<h3 id="label-games">games<span><a href="#label-games">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>List of <a href="#game">Game</a> instances</p>
+
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-info">info<span><a href="#label-info">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Puts the game.<a href="#info">info</a> from each game from <a
+href="#games">games</a></p>
+
+<h3 id="label-parse">parse<span><a href="#label-parse">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Creates the <a href="#game">Game</a> instances</p>
+</li><li>
+<p>Identify <a href="#process_kill_line">kill_lines</a> &amp; <a
+href="#process_user_info_line">user_info_lines</a></p>
+</li></ul>
+
+<h1 id="label-Task1.rb">Task1.rb<span><a href="#label-Task1.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Script for task 1 “`ruby require &#39;./parser&#39; require &#39;pp&#39;</p>
+
+<p>parser = <a
+href="LogParser.html#method-c-new">LogParser.new</a>(&#39;games.log&#39;)
+pp parser.get_game_info(0) “`</p>
+
+<h1 id="label-Task2.rb">Task2.rb<span><a href="#label-Task2.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Script for task 2 “`ruby require &#39;./parser&#39; require &#39;pp&#39;</p>
+
+<p>parser = <a
+href="LogParser.html#method-c-new">LogParser.new</a>(&#39;games.log&#39;)</p>
+
+<h1 id="label-Getting+all+players+from+all+games">Getting all players from all games<span><a href="#label-Getting+all+players+from+all+games">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h1 id="label-The+kills+from+player+from+each+game+has+to+be+summed">The kills from player from each game has to be summed<span><a href="#label-The+kills+from+player+from+each+game+has+to+be+summed">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>global_players_hash = {} parser.games.each do |game| 
+game.players.each_value do |player|  if
+global_players_hash.key?(player.name)  <a
+href="player.name">global_players_hash</a>.add_kills(player.kills)  else 
+<a href="player.name">global_players_hash</a> = player  end  end end</p>
+
+<h1 id="label-Parsing+hash+to+list+of+hashs">Parsing hash to list of hashs<span><a href="#label-Parsing+hash+to+list+of+hashs">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>global_players_list = [] global_players_hash.each_value do |player| 
+global_players_list.push(name: player.name, kills: player.kills) end</p>
+
+<h1 id="label-Ordering+list+for+global+ranking">Ordering list for global ranking<span><a href="#label-Ordering+list+for+global+ranking">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>global_ranking = global_players_list.sort_by { |info| -<a
+href=":kills">info</a> }</p>
+
+<p>pp parser.all_games_info</p>
+
+<h1 id="label-Printing+global+ranking">Printing global ranking<span><a href="#label-Printing+global+ranking">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>h = {} h[&#39;ranking geral&#39;] = global_ranking pp h “`</p>
+
+<h1 id="label-Task_plus.rb">Task_plus.rb<span><a href="#label-Task_plus.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Script for task plus “`ruby require &#39;./parser&#39; require &#39;pp&#39;</p>
+
+<p>parser = <a
+href="LogParser.html#method-c-new">LogParser.new</a>(&#39;games.log&#39;)</p>
+
+<p>parser.games.each do |game|</p>
+
+<pre class="ruby">    <span class="ruby-comment"># Creating hash counter entry for each mean of kill from the game</span>
+    <span class="ruby-identifier">kills_by_means</span> = {}
+    <span class="ruby-identifier">game</span>.<span class="ruby-identifier">kills</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">kill</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">kills_by_means</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">kill</span>.<span class="ruby-identifier">mean</span>)
+                    <span class="ruby-identifier">kills_by_means</span>[<span class="ruby-identifier">kill</span>.<span class="ruby-identifier">mean</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">else</span>
+                    <span class="ruby-identifier">kills_by_means</span>[<span class="ruby-identifier">kill</span>.<span class="ruby-identifier">mean</span>] = <span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Ordering the hash for ranking like output</span>
+    <span class="ruby-identifier">kills_by_means</span> = <span class="ruby-identifier">kills_by_means</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mean</span>, <span class="ruby-identifier">count</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">count</span> }
+    <span class="ruby-identifier">kills_by_means</span>.<span class="ruby-identifier">to_h</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">game</span>.<span class="ruby-identifier">name</span>] = { <span class="ruby-string">&#39;kills_by_means&#39;</span><span class="ruby-operator">:</span> <span class="ruby-identifier">kills_by_means</span> }
+    <span class="ruby-identifier">pp</span> <span class="ruby-identifier">h</span>
+</pre>
+
+<p>end “`</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

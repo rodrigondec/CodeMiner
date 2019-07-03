@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Player - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_kills">#add_kills</a>
+    
+    <li ><a href="#method-i-decrement_kill">#decrement_kill</a>
+    
+    <li ><a href="#method-i-increment_kill">#increment_kill</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Player">
+  <h1 id="class-Player" class="class">
+    class Player
+  </h1>
+
+  <section class="description">
+    
+<p>Class representing a player. Contains the name and kill counter of the
+player</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-kills" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">kills</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(name: String)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize a <a href="Player.html">Player</a> instance Params:</p>
+<dl class="rdoc-list note-list"><dt><code>name</code>
+<dd>
+<p>name string for the player</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File player.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;Name must be a String&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@kills</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_kills" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_kills</span><span
+            class="method-args">(number: Numeric)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Increment the player kills counter by a provided number Params:</p>
+<dl class="rdoc-list note-list"><dt>number
+<dd>
+<p>numeric value to be added on the player kills counter</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="add_kills-source">
+            <pre><span class="ruby-comment"># File player.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_kills</span>(<span class="ruby-identifier">number</span><span class="ruby-operator">:</span> <span class="ruby-constant">Numeric</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">number</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
+
+  <span class="ruby-ivar">@kills</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">number</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-decrement_kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decrement_kill</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Decrement the player kills counter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="decrement_kill-source">
+            <pre><span class="ruby-comment"># File player.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrement_kill</span>
+  <span class="ruby-ivar">@kills</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-increment_kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">increment_kill</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Increment the player kills counter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="increment_kill-source">
+            <pre><span class="ruby-comment"># File player.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">increment_kill</span>
+  <span class="ruby-ivar">@kills</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

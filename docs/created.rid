@@ -1,0 +1,26 @@
+Wed, 03 Jul 2019 19:42:20 -0300
+./docs/game.png	Tue, 02 Jul 2019 23:29:02 -0300
+./docs/game_info.png	Tue, 02 Jul 2019 19:38:23 -0300
+./docs/kill.png	Tue, 02 Jul 2019 23:28:40 -0300
+./docs/parser.png	Tue, 02 Jul 2019 23:29:29 -0300
+./docs/player.png	Tue, 02 Jul 2019 23:28:19 -0300
+./docs/players_hash.png	Tue, 02 Jul 2019 19:33:24 -0300
+./game.rb	Wed, 03 Jul 2019 19:13:30 -0300
+./games.log	Mon, 01 Jul 2019 18:34:50 -0300
+./kill.rb	Wed, 03 Jul 2019 19:42:16 -0300
+./LICENSE.md	Mon, 01 Jul 2019 18:33:58 -0300
+./makefile	Wed, 03 Jul 2019 18:33:40 -0300
+./parser.rb	Wed, 03 Jul 2019 19:13:36 -0300
+./player.rb	Wed, 03 Jul 2019 19:39:50 -0300
+./README.md	Wed, 03 Jul 2019 19:15:25 -0300
+./task1.rb	Wed, 03 Jul 2019 19:13:55 -0300
+./task2.rb	Wed, 03 Jul 2019 19:14:10 -0300
+./task_plus.rb	Wed, 03 Jul 2019 19:14:51 -0300
+./tests/data/games_1-2.log	Wed, 03 Jul 2019 19:04:45 -0300
+./tests/data/game_1.log	Wed, 03 Jul 2019 19:04:37 -0300
+./tests/data/game_2.log	Wed, 03 Jul 2019 19:01:31 -0300
+./tests/tc_game.rb	Wed, 03 Jul 2019 18:49:42 -0300
+./tests/tc_kill.rb	Wed, 03 Jul 2019 18:14:15 -0300
+./tests/tc_parser.rb	Wed, 03 Jul 2019 19:08:52 -0300
+./tests/tc_player.rb	Wed, 03 Jul 2019 17:02:17 -0300
+./test_runner.rb	Wed, 03 Jul 2019 18:56:29 -0300
