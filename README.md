@@ -24,7 +24,7 @@ This project has the following entities & files:
 
 # Player
 >Class Diagram
-![player diagram](imgs/player.png?raw=true "Player Diagram")
+![player diagram](https://github.com/rodrigondec/codeminer/tree/master/imgs/player.png?raw=true "Player Diagram")
 
 ## Attributes
 ### name
@@ -47,7 +47,7 @@ Increments the attribute `kills` counter by a provided `number`
 
 # Kill
 >Class Diagram
-![kill diagram](imgs/kill.png?raw=true "Kill Diagram")
+![kill diagram](https://github.com/rodrigondec/codeminer/blob/master/imgs/kill.png?raw=true "Kill Diagram")
 
 ## Attributes
 ### killer
@@ -59,7 +59,7 @@ String containing death cause name
 
 # Game
 >Class Diagram
-![game diagram](imgs/game.png?raw=true "Game Diagram")
+![game diagram](https://github.com/rodrigondec/codeminer/blob/master/imgs/game.png?raw=true "Game Diagram")
 
 ## Attributes
 ### name
@@ -67,7 +67,7 @@ String containing game name
 ### players
 Hash of players on the game. The key of the hash is the name of player and the value is a `Player` instance.
 >image example
-![hash players example](imgs/players_hash.png?raw=true "Hash Players Example")
+![hash players example](https://github.com/rodrigondec/codeminer/blob/master/imgs/players_hash.png?raw=true "Hash Players Example")
 ### kills
 List of kills (instance of class [`Kill`](#kill)) on the game
 
@@ -75,7 +75,7 @@ List of kills (instance of class [`Kill`](#kill)) on the game
 ### info
 Return a hash containing `total_kills`, `players` and `kills`
 >image example
-![game info example](imgs/game_info.png?raw=true "Game Info Example")
+![game info example](https://github.com/rodrigondec/codeminer/blob/master/imgs/game_info.png?raw=true "Game Info Example")
 
 ### players_info 
 Return a list containing the name of each player on the game. Used on [`info`](#info) method
@@ -138,7 +138,7 @@ Call method [`process_kill`](#process_kill).
 
 # LogParser
 >Class Diagram
-![parser diagram](imgs/parser.png?raw=true "Parser Diagram")
+![parser diagram](https://github.com/rodrigondec/codeminer/blob/master/imgs/parser.png?raw=true "Parser Diagram")
 
 ## Attributes
 ### data
