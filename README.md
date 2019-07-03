@@ -99,7 +99,7 @@ Create a new [`Kill`](#kill) instance and save it on [`kills`](#kills) attribute
 receive the parameters:
 - name: String
 
-Call method [`add_player`](#add_player) if there's no sush player or return the player instance
+Call method [`add_player`](#add_player) if there's no such player or return the player instance
 
 ### get_player
 receive the parameters:
