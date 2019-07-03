@@ -14,9 +14,9 @@ This project has the following entities & files:
 - [Kill](#kill)
 - [Game](#game)
 - [LogParser](#logparser)
-- [task1.rb](#task1.rb)
-- [task2.rb](#task2.rb)
-- [task_plus.rb](#task_plus.rb)
+- [task1.rb](#task1rb)
+- [task2.rb](#task2rb)
+- [task_plus.rb](#task_plusrb)
 
 # Player
 Class representing a player. Contains the name and kill counter of the player
