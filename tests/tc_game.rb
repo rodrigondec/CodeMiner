@@ -61,3 +61,36 @@ class TestGame < Test::Unit::TestCase
     assert_equal(victim, kill.victim)
     assert_equal('test', kill.mean)
   end
+
+  def test_create_or_get_player
+    @game.send(:create_or_get_player, 'test')
+    assert_equal(1, @game.players.length)
+    assert_true(@game.players.key?('test'))
+    player = @game.players['test']
+
+    @game.send(:create_or_get_player, 'test')
+    assert_equal(1, @game.players.length)
+    assert_true(@game.players.key?('test'))
+    player2 = @game.players['test']
+
+    assert_equal(player2, player)
+  end
+
+  def test_get_player
+    player = @game.send(:get_player, 'test')
+    assert_equal(1, @game.players.length)
+    assert_true(@game.players.key?('test'))
+    player2 = @game.players['test']
+
+    player3 = @game.send(:get_player, 'test')
+
+    assert_equal(player2, player)
+    assert_equal(player3, player)
+  end
+
+  def test_get_player_world
+    player = @game.send(:get_player, '<world>')
+    assert_equal(0, @game.players.length)
+
+    assert_equal(nil, player)
+  end
