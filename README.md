@@ -2,7 +2,7 @@
 Project made in Ruby for Codeminer interview
 
 # Setup
-Install Ruby 2.3 from the [official documentation](https://www.ruby-lang.org/en/documentation/installation/#package-management-systems)
+Install Ruby 2.3 from the [official documentation](https://www.ruby-lang.org/en/documentation/installation/)
 
 ## Running
 run the files `task1.rb`, `task2.rb` and `task_plus.rb` with the command `ruby file_name_here.rb`. 
