@@ -117,4 +117,31 @@ class TestGame < Test::Unit::TestCase
     assert_equal('test', kill.mean)
   end
 
+  def test_process_kill_line
+    @game.process_kill_line(@kill_line)
+
+    assert_equal(1, @game.players.length)
+
+    assert_true(@game.players.key?('Isgalamido'))
+    isgalamamido = @game.players['Isgalamido']
+
+    assert_equal(-1, isgalamamido.kills)
+
+    assert_equal(1, @game.kills.length)
+    kill = @game.kills[0]
+    assert_equal(nil, kill.killer)
+    assert_equal(isgalamamido, kill.victim)
+    assert_equal('MOD_TRIGGER_HURT', kill.mean)
   end
+
+  def test_process_user_info_line
+    @game.process_user_info_line(@user_info_line)
+
+    assert_equal(1, @game.players.length)
+
+    assert_true(@game.players.key?('Isgalamido'))
+    isgalamamido = @game.players['Isgalamido']
+    assert_equal('Isgalamido', isgalamamido.name)
+  end
+
+end
