@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-# File:  tc_simple_number.rb
-
-require './player'
+require_relative '../player'
 require 'test/unit'
 
 class TestPlayer < Test::Unit::TestCase
+
   def setup
-    @player = Player.new('teste')
+    @player = Player.new('test')
   end
 
   def test_creation
-    player = Player.new('teste')
+    player = Player.new('test')
 
-    assert_equal('teste', player.name)
+    assert_instance_of(Player, player)
+    assert_equal('test', player.name)
     assert_equal(0, player.kills)
   end
 
