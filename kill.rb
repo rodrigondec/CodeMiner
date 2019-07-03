@@ -4,7 +4,12 @@ require_relative 'player'
 
 # Class representing a kill. Contains the killer, victim and the mean
 class Kill
-  def initialize(killer, victim, mean)
+  # Initialize a Player instance
+  # Params:
+  # *killer*:: +Player+ instance of the killer. May be nil
+  # *victim*:: +Player+ instance of the victim
+  # *mean*:: String with the cause of death
+  def initialize(killer: Player | nil, victim: Player, mean: String)
     raise('Killer must be a Player instance or nil') unless
       killer.is_a?(Player) || killer.nil?
     raise('Victim must be a Player instance') unless victim.is_a?(Player)
