@@ -6,6 +6,9 @@ require './kill'
 # Class representing a game. Contains the name of the game,
 # list of players and list of kills
 class Game
+  # Initialize a Game instance
+  # Params:
+  # +name+:: name string for the game
   def initialize(name)
     raise('Name must be a String') unless name.is_a?(String)
 
@@ -16,6 +19,7 @@ class Game
 
   attr_reader :players, :kills, :name
 
+  # returns a hash with information's about the game
   def info
     h = {}
     h[@name] = {
@@ -26,10 +30,12 @@ class Game
     h
   end
 
+  # returns a list with the ranking of the game
   def ranking
     kills_info.sort_by { |info| -info[:kills] }
   end
 
+  # Process a kill line from the log
   def process_kill_line(kill_line)
     line_array = kill_line.split
 
@@ -43,6 +49,7 @@ class Game
     process_kill(killer_name, victim_name, mean)
   end
 
+  # Process a user info line from the log
   def process_user_info_line(user_info_line)
     start_name_index = user_info_line.index('\\') + 1
 
@@ -55,6 +62,7 @@ class Game
 
   private
 
+  # returns a list with information's about the game players
   def players_info
     info = []
     @players.each_value do |player|
@@ -63,6 +71,7 @@ class Game
     info
   end
 
+  # returns a list with information's about the game players kills
   def kills_info
     info = []
     @players.each_value do |player|
@@ -71,19 +80,23 @@ class Game
     info
   end
 
+  # add a new +Player+ to the game
   def add_player(name)
     @players[name] = Player.new(name)
   end
 
+  # add a new +Kill+ to the game
   def add_kill(killer, victim, mean)
     @kills.push(Kill.new(killer, victim, mean))
   end
 
+  # create a new +Player+ to the game or get it's instance
   def create_or_get_player(name)
     add_player(name) unless @players.key?(name)
     @players[name]
   end
 
+  # get the +Player+ instance or nil if the name is '<world>'
   def get_player(name)
     if name == '<world>'
       nil
@@ -92,6 +105,7 @@ class Game
     end
   end
 
+  # Process a kill with infos extracted from +process_kill_line+
   def process_kill(killer_name, victim_name, mean)
     killer = get_player(killer_name)
     victim = get_player(victim_name)

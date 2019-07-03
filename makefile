@@ -9,3 +9,8 @@ task.2:
 
 task.plus:
 	ruby task_plus.rb
+
+rdoc:
+	rdoc --all
+	rm -rf docs
+	cp doc docs

@@ -5,6 +5,9 @@ require './game'
 
 # Class for parsing the games.log
 class LogParser
+  # Initialize a LogParser instance and parse the file.log
+  # Params:
+  # +file_path+:: file location String
   def initialize(file_path)
     raise('File path must be a String') unless file_path.is_a?(String)
 
@@ -20,15 +23,22 @@ class LogParser
 
   attr_reader :games
 
+  # return a game given a index
+  # Params:
+  # +game_index+:: game index for the list
   def get_game(game_index)
     @games[game_index]
   end
 
+  # return a game info given a index
+  # Params:
+  # +game_index+:: game index for the list
   def get_game_info(game_index)
     game = get_game(game_index)
     game.info
   end
 
+  # return a games info list
   def all_games_info
     info = []
     @games.each_index do |index|
@@ -39,6 +49,7 @@ class LogParser
 
   private
 
+  # parse the file.log provided
   def parse
     game = nil
     game_number = 1
