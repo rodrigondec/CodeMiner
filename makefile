@@ -13,4 +13,4 @@ task.plus:
 rdoc:
 	rdoc --all
 	rm -rf docs
-	cp doc docs
+	mv doc docs
