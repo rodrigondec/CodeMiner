@@ -18,11 +18,13 @@ class Game
   attr_reader :players, :kills, :name
 
   def info
-    {
+    h = {}
+    h[@name] = {
       total_kills: @kills.length,
       players: players_info,
       kills: kills_info
     }
+    h
   end
 
   def ranking

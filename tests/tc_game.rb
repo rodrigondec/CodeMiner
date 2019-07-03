@@ -27,7 +27,9 @@ class TestGame < Test::Unit::TestCase
   end
 
   def test_info
-    assert_equal({ total_kills: 0, players: [], kills: [] }, @game.info)
+    info = {}
+    info['Game 1'] = { total_kills: 0, players: [], kills: [] }
+    assert_equal(info, @game.info)
   end
 
   def test_players_info
