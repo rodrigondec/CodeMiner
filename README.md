@@ -29,12 +29,6 @@ String containing the player name
 Number containing the count of player kills 
 
 ## Methods
-### name
-Attr_reader for the attribute with same name
-
-### kills
-Attr_reader for the attribute with same name
-
 ### increment_kill
 Increments the attribute `kills` counter by `1`
 
@@ -59,10 +53,6 @@ Player instance of class [`Player`](#player) who has been killed
 ### mean
 String containing death cause name
 
-## Methods
-### mean
-Attr_reader for the attribute with same name
-
 # Game
 >Class Diagram
 ![game diagram](docs/game.png?raw=true "Game Diagram")
@@ -78,12 +68,6 @@ Hash of players on the game. The key of the hash is the name of player and the v
 List of kills (instance of class [`Kill`](#kill)) on the game
 
 ## Methods
-### players
-Attr_reader for the attribute with same name
-
-### kills
-Attr_reader for the attribute with same name
-
 ### info
 Return a hash containing `total_kills`, `players` and `kills`
 >image example
@@ -159,9 +143,6 @@ List of strings extracted from the games.log file
 List of [`Game`](#game) instances
 
 ## Methods
-### games
-Attr_reader for the attribute with same name
-
 ### info
 Puts the game.[`info`](#info) from each game from [`games`](#games)
 
