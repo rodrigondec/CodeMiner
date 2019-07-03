@@ -1,3 +1,6 @@
+test:
+	ruby test_runner.rb
+
 task.1:
 	ruby task1.rb
 
