@@ -7,6 +7,8 @@ require 'pp'
 # Class for parsing the games.log
 class LogParser
   def initialize(file_path)
+    raise('File path must be a String') unless file_path.is_a?(String)
+
     file = File.open(file_path)
     @data = []
     file.each_line do |line|
