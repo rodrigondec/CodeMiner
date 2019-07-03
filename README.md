@@ -5,8 +5,12 @@ Project made in Ruby for Codeminer interview
 Install Ruby 2.3 from the [official documentation](https://www.ruby-lang.org/en/documentation/installation/)
 
 ## Running
+### Tasks
 run the files `task1.rb`, `task2.rb` and `task_plus.rb` with the command `ruby file_name_here.rb`. 
 > If there's make support on your OS you may use `make task.1` or `make task.2` or `make task.plus`.
+### Tests
+run the file `test_runner.rb` with the command `ruby test_runner.rb`.
+> If there's make support on your OS you may use `make test`.
 
 # Documentation
 This project has the following entities & files:
