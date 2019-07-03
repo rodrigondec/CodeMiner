@@ -2,7 +2,10 @@
 
 # Class representing a player. Contains the name and kill counter of the player
 class Player
-  def initialize(name)
+  # Initialize a Player instance
+  # Params:
+  # +name+:: name string for the player
+  def initialize(name: String)
     raise('Name must be a String') unless name.is_a?(String)
 
     @name = name
@@ -11,15 +14,20 @@ class Player
 
   attr_reader :name, :kills
 
+  # Increment the player kills counter
   def increment_kill
     @kills += 1
   end
 
+  # Decrement the player kills counter
   def decrement_kill
     @kills -= 1
   end
 
-  def add_kills(number)
+  # Increment the player kills counter by a provided number
+  # Params:
+  # number:: numeric value to be added on the player kills counter
+  def add_kills(number: Numeric)
     raise unless number.is_a?(Numeric)
 
     @kills += number
