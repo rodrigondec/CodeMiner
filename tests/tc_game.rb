@@ -49,3 +49,15 @@ class TestGame < Test::Unit::TestCase
     assert_instance_of(Player, player)
     assert_equal('test', player.name)
   end
+
+  def test_add_kill
+    killer = Player.new('killer')
+    victim = Player.new('victim')
+    @game.send(:add_kill, killer, victim, 'test')
+    assert_equal(1, @game.kills.length)
+    kill = @game.kills[0]
+    assert_instance_of(Kill, kill)
+    assert_equal(killer, kill.killer)
+    assert_equal(victim, kill.victim)
+    assert_equal('test', kill.mean)
+  end
