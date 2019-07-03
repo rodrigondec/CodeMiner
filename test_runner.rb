@@ -3,6 +3,7 @@
 require_relative 'tests/tc_player'
 require_relative 'tests/tc_kill'
 require_relative 'tests/tc_game'
+require_relative 'tests/tc_parser'
 require 'test/unit'
 require 'test/unit/ui/console/testrunner'
 
@@ -11,6 +12,7 @@ test_suite = Test::Unit::TestSuite.new('My custom test suite')
 test_suite << TestPlayer.suite
 test_suite << TestKill.suite
 test_suite << TestGame.suite
+test_suite << TestParser.suite
 
 # run the suite
 Test::Unit::UI::Console::TestRunner.run(test_suite)
