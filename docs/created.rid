@@ -1,18 +1,18 @@
-Wed, 03 Jul 2019 19:42:20 -0300
-./docs/game.png	Tue, 02 Jul 2019 23:29:02 -0300
-./docs/game_info.png	Tue, 02 Jul 2019 19:38:23 -0300
-./docs/kill.png	Tue, 02 Jul 2019 23:28:40 -0300
-./docs/parser.png	Tue, 02 Jul 2019 23:29:29 -0300
-./docs/player.png	Tue, 02 Jul 2019 23:28:19 -0300
-./docs/players_hash.png	Tue, 02 Jul 2019 19:33:24 -0300
-./game.rb	Wed, 03 Jul 2019 19:13:30 -0300
+Wed, 03 Jul 2019 20:09:12 -0300
+./game.rb	Wed, 03 Jul 2019 20:06:36 -0300
 ./games.log	Mon, 01 Jul 2019 18:34:50 -0300
-./kill.rb	Wed, 03 Jul 2019 19:42:16 -0300
+./imgs/game.png	Tue, 02 Jul 2019 23:29:02 -0300
+./imgs/game_info.png	Tue, 02 Jul 2019 19:38:23 -0300
+./imgs/kill.png	Tue, 02 Jul 2019 23:28:40 -0300
+./imgs/parser.png	Tue, 02 Jul 2019 23:29:29 -0300
+./imgs/player.png	Tue, 02 Jul 2019 23:28:19 -0300
+./imgs/players_hash.png	Tue, 02 Jul 2019 19:33:24 -0300
+./kill.rb	Wed, 03 Jul 2019 19:50:41 -0300
 ./LICENSE.md	Mon, 01 Jul 2019 18:33:58 -0300
-./makefile	Wed, 03 Jul 2019 18:33:40 -0300
-./parser.rb	Wed, 03 Jul 2019 19:13:36 -0300
-./player.rb	Wed, 03 Jul 2019 19:39:50 -0300
-./README.md	Wed, 03 Jul 2019 19:15:25 -0300
+./makefile	Wed, 03 Jul 2019 20:06:37 -0300
+./parser.rb	Wed, 03 Jul 2019 20:09:10 -0300
+./player.rb	Wed, 03 Jul 2019 19:49:56 -0300
+./README.md	Wed, 03 Jul 2019 19:45:06 -0300
 ./task1.rb	Wed, 03 Jul 2019 19:13:55 -0300
 ./task2.rb	Wed, 03 Jul 2019 19:14:10 -0300
 ./task_plus.rb	Wed, 03 Jul 2019 19:14:51 -0300

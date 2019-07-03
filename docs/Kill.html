@@ -159,7 +159,7 @@
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(killer: Player | nil, victim: Player, mean: String)</span>
+            class="method-args">(killer, victim, mean)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -168,7 +168,7 @@
 
         <div class="method-description">
           
-          <p>Initialize a <a href="Player.html">Player</a> instance Params:</p>
+          <p>Initialize a <code>Kill</code> instance Params:</p>
 <dl class="rdoc-list note-list"><dt><strong>killer</strong>
 <dd>
 <p><code>Player</code> instance of the killer. May be nil</p>
@@ -185,7 +185,7 @@
           
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File kill.rb, line 12</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">killer</span><span class="ruby-operator">:</span> <span class="ruby-constant">Player</span> <span class="ruby-operator">|</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">victim</span><span class="ruby-operator">:</span> <span class="ruby-constant">Player</span>, <span class="ruby-identifier">mean</span><span class="ruby-operator">:</span> <span class="ruby-constant">String</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">killer</span>, <span class="ruby-identifier">victim</span>, <span class="ruby-identifier">mean</span>)
   <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;Killer must be a Player instance or nil&#39;</span>) <span class="ruby-keyword">unless</span>
     <span class="ruby-identifier">killer</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Player</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">killer</span>.<span class="ruby-identifier">nil?</span>
   <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;Victim must be a Player instance&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">victim</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Player</span>)

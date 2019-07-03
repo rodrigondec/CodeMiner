@@ -78,6 +78,8 @@
     
     <li ><a href="#method-i-get_game_info">#get_game_info</a>
     
+    <li ><a href="#method-i-parse">#parse</a>
+    
   </ul>
 </div>
 
@@ -148,13 +150,18 @@
 
         <div class="method-description">
           
-          
+          <p>Initialize a <a href="LogParser.html">LogParser</a> instance and parse the
+file.log Params:</p>
+<dl class="rdoc-list note-list"><dt><code>file_path</code>
+<dd>
+<p>file location String</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File parser.rb, line 8</span>
+            <pre><span class="ruby-comment"># File parser.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file_path</span>)
   <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;File path must be a String&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">file_path</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
 
@@ -198,13 +205,13 @@
 
         <div class="method-description">
           
-          
+          <p>return a games info list</p>
           
           
 
           
           <div class="method-source-code" id="all_games_info-source">
-            <pre><span class="ruby-comment"># File parser.rb, line 32</span>
+            <pre><span class="ruby-comment"># File parser.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">all_games_info</span>
   <span class="ruby-identifier">info</span> = []
   <span class="ruby-ivar">@games</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
@@ -235,13 +242,17 @@
 
         <div class="method-description">
           
-          
+          <p>return a game given a index Params:</p>
+<dl class="rdoc-list note-list"><dt><code>game_index</code>
+<dd>
+<p>game index for the list</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="get_game-source">
-            <pre><span class="ruby-comment"># File parser.rb, line 23</span>
+            <pre><span class="ruby-comment"># File parser.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_game</span>(<span class="ruby-identifier">game_index</span>)
   <span class="ruby-ivar">@games</span>[<span class="ruby-identifier">game_index</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -268,16 +279,73 @@
 
         <div class="method-description">
           
-          
+          <p>return a game info given a index Params:</p>
+<dl class="rdoc-list note-list"><dt><code>game_index</code>
+<dd>
+<p>game index for the list</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="get_game_info-source">
-            <pre><span class="ruby-comment"># File parser.rb, line 27</span>
+            <pre><span class="ruby-comment"># File parser.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_game_info</span>(<span class="ruby-identifier">game_index</span>)
   <span class="ruby-identifier">game</span> = <span class="ruby-identifier">get_game</span>(<span class="ruby-identifier">game_index</span>)
   <span class="ruby-identifier">game</span>.<span class="ruby-identifier">info</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>parse the file.log provided</p>
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File parser.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>
+  <span class="ruby-identifier">game</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">game_number</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;InitGame:&#39;</span>)
+      <span class="ruby-identifier">game</span> = <span class="ruby-constant">Game</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Game #{game_number}&quot;</span>)
+      <span class="ruby-identifier">game_number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@games</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">game</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;ClientUserinfoChanged:&#39;</span>)
+      <span class="ruby-identifier">game</span>.<span class="ruby-identifier">process_user_info_line</span>(<span class="ruby-identifier">line</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;Kill:&#39;</span>)
+      <span class="ruby-identifier">game</span>.<span class="ruby-identifier">process_kill_line</span>(<span class="ruby-identifier">line</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

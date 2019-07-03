@@ -72,7 +72,21 @@
     
     <li ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-add_kill">#add_kill</a>
+    
+    <li ><a href="#method-i-add_player">#add_player</a>
+    
+    <li ><a href="#method-i-create_or_get_player">#create_or_get_player</a>
+    
+    <li ><a href="#method-i-get_player">#get_player</a>
+    
     <li ><a href="#method-i-info">#info</a>
+    
+    <li ><a href="#method-i-kills_info">#kills_info</a>
+    
+    <li ><a href="#method-i-players_info">#players_info</a>
+    
+    <li ><a href="#method-i-process_kill">#process_kill</a>
     
     <li ><a href="#method-i-process_kill_line">#process_kill_line</a>
     
@@ -177,13 +191,17 @@ and list of kills</p>
 
         <div class="method-description">
           
-          
+          <p>Initialize a <a href="Game.html">Game</a> instance Params:</p>
+<dl class="rdoc-list note-list"><dt><code>name</code>
+<dd>
+<p>name string for the game</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File game.rb, line 9</span>
+            <pre><span class="ruby-comment"># File game.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;Name must be a String&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
 
@@ -222,13 +240,13 @@ and list of kills</p>
 
         <div class="method-description">
           
-          
+          <p>returns a hash with information&#39;s about the game</p>
           
           
 
           
           <div class="method-source-code" id="info-source">
-            <pre><span class="ruby-comment"># File game.rb, line 19</span>
+            <pre><span class="ruby-comment"># File game.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">info</span>
   <span class="ruby-identifier">h</span> = {}
   <span class="ruby-identifier">h</span>[<span class="ruby-ivar">@name</span>] = {
@@ -261,13 +279,13 @@ and list of kills</p>
 
         <div class="method-description">
           
-          
+          <p>Process a kill line from the log</p>
           
           
 
           
           <div class="method-source-code" id="process_kill_line-source">
-            <pre><span class="ruby-comment"># File game.rb, line 33</span>
+            <pre><span class="ruby-comment"># File game.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">process_kill_line</span>(<span class="ruby-identifier">kill_line</span>)
   <span class="ruby-identifier">line_array</span> = <span class="ruby-identifier">kill_line</span>.<span class="ruby-identifier">split</span>
 
@@ -303,13 +321,13 @@ and list of kills</p>
 
         <div class="method-description">
           
-          
+          <p>Process a user info line from the log</p>
           
           
 
           
           <div class="method-source-code" id="process_user_info_line-source">
-            <pre><span class="ruby-comment"># File game.rb, line 46</span>
+            <pre><span class="ruby-comment"># File game.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">process_user_info_line</span>(<span class="ruby-identifier">user_info_line</span>)
   <span class="ruby-identifier">start_name_index</span> = <span class="ruby-identifier">user_info_line</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&#39;\&#39;</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
 
@@ -342,15 +360,277 @@ and list of kills</p>
 
         <div class="method-description">
           
-          
+          <p>returns a list with the ranking of the game</p>
           
           
 
           
           <div class="method-source-code" id="ranking-source">
-            <pre><span class="ruby-comment"># File game.rb, line 29</span>
+            <pre><span class="ruby-comment"># File game.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ranking</span>
   <span class="ruby-identifier">kills_info</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">info</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">info</span>[<span class="ruby-value">:kills</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_kill</span><span
+            class="method-args">(killer, victim, mean)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>add a new <code>Kill</code> to the game</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_kill-source">
+            <pre><span class="ruby-comment"># File game.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_kill</span>(<span class="ruby-identifier">killer</span>, <span class="ruby-identifier">victim</span>, <span class="ruby-identifier">mean</span>)
+  <span class="ruby-ivar">@kills</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Kill</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">killer</span>, <span class="ruby-identifier">victim</span>, <span class="ruby-identifier">mean</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_player" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_player</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>add a new <code>Player</code> to the game</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_player-source">
+            <pre><span class="ruby-comment"># File game.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_player</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@players</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Player</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_or_get_player" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_or_get_player</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>create a new <code>Player</code> to the game or get it&#39;s instance</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_or_get_player-source">
+            <pre><span class="ruby-comment"># File game.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_or_get_player</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">add_player</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@players</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_player" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_player</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>get the <code>Player</code> instance or nil if the name is
+&#39;&lt;world&gt;&#39;</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_player-source">
+            <pre><span class="ruby-comment"># File game.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_player</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&lt;world&gt;&#39;</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">create_or_get_player</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-kills_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kills_info</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns a list with information&#39;s about the game players kills</p>
+          
+          
+
+          
+          <div class="method-source-code" id="kills_info-source">
+            <pre><span class="ruby-comment"># File game.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kills_info</span>
+  <span class="ruby-identifier">info</span> = []
+  <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">player</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">info</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">player</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">kills</span><span class="ruby-operator">:</span> <span class="ruby-identifier">player</span>.<span class="ruby-identifier">kills</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">info</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-players_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">players_info</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns a list with information&#39;s about the game players</p>
+          
+          
+
+          
+          <div class="method-source-code" id="players_info-source">
+            <pre><span class="ruby-comment"># File game.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">players_info</span>
+  <span class="ruby-identifier">info</span> = []
+  <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">player</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">info</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">player</span>.<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">info</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-process_kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_kill</span><span
+            class="method-args">(killer_name, victim_name, mean)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Process a kill with infos extracted from <code>process_kill_line</code></p>
+          
+          
+
+          
+          <div class="method-source-code" id="process_kill-source">
+            <pre><span class="ruby-comment"># File game.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_kill</span>(<span class="ruby-identifier">killer_name</span>, <span class="ruby-identifier">victim_name</span>, <span class="ruby-identifier">mean</span>)
+  <span class="ruby-identifier">killer</span> = <span class="ruby-identifier">get_player</span>(<span class="ruby-identifier">killer_name</span>)
+  <span class="ruby-identifier">victim</span> = <span class="ruby-identifier">get_player</span>(<span class="ruby-identifier">victim_name</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">killer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">killer</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">victim</span>
+    <span class="ruby-identifier">killer</span>.<span class="ruby-identifier">increment_kill</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">victim</span>.<span class="ruby-identifier">decrement_kill</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">add_kill</span>(<span class="ruby-identifier">killer</span>, <span class="ruby-identifier">victim</span>, <span class="ruby-identifier">mean</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           

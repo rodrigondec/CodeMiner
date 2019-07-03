@@ -153,7 +153,7 @@ player</p>
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(name: String)</span>
+            class="method-args">(name)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -173,7 +173,7 @@ player</p>
           
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File player.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-constant">String</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">raise</span>(<span class="ruby-string">&#39;Name must be a String&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
 
   <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
@@ -201,7 +201,7 @@ player</p>
         
         <div class="method-heading">
           <span class="method-name">add_kills</span><span
-            class="method-args">(number: Numeric)</span>
+            class="method-args">(number)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -221,7 +221,7 @@ player</p>
           
           <div class="method-source-code" id="add_kills-source">
             <pre><span class="ruby-comment"># File player.rb, line 30</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_kills</span>(<span class="ruby-identifier">number</span><span class="ruby-operator">:</span> <span class="ruby-constant">Numeric</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_kills</span>(<span class="ruby-identifier">number</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">number</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
 
   <span class="ruby-ivar">@kills</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">number</span>
