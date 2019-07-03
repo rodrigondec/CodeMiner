@@ -27,15 +27,7 @@ if $PROGRAM_NAME == __FILE__
   # Ordering list for global ranking
   global_ranking = global_players_list.sort_by { |info| -info[:kills] }
 
-  # Printing game info e game ranking
-  parser.games.each_index do |index|
-    game = parser.games[index]
-    game_index = "Game #{index + 1}"
-    h = {}
-    h[game_index] = game.info
-    h[:ranking] = game.ranking
-    pp h
-  end
+  pp parser.all_games_info
 
   # Printing global ranking
   h = {}

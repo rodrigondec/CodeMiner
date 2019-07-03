@@ -3,5 +3,5 @@
 if $PROGRAM_NAME == __FILE__
   require './parser'
   parser = LogParser.new('games.log')
-  parser.info
+  pp parser.get_game_info(0)
 end

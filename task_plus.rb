@@ -4,9 +4,7 @@ if $PROGRAM_NAME == __FILE__
   require './parser'
   parser = LogParser.new('games.log')
 
-  parser.games.each_index do |index|
-    game = parser.games[index]
-    game_index = "Game #{index + 1}"
+  parser.games.each do |game|
 
     # Creating hash counter entry for each mean of kill from the game
     kills_by_means = {}
@@ -22,7 +20,7 @@ if $PROGRAM_NAME == __FILE__
     kills_by_means = kills_by_means.sort_by { |mean, count| -count }
     kills_by_means.to_h
     h = {}
-    h[game_index] = { 'kills_by_means': kills_by_means }
+    h[game.name] = { 'kills_by_means': kills_by_means }
     pp h
   end
 end
