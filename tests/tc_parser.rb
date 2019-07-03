@@ -10,4 +10,6 @@ class TestParser < Test::Unit::TestCase
     assert_raise(RuntimeError) { LogParser.new(1) }
   end
 
-end
+  def test_invalid_file_path
+    assert_raise(Errno::ENOENT) { LogParser.new('asdadsadasdasdasdsad.log') }
+  end
