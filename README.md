@@ -146,7 +146,7 @@ receive the parameters:
 
 Identify `killer_name`, `victim_name` & `mean`.
 Call method [`process_kill`](#process_kill).
->line example`20:54 Kill: 1022 2 22: <world> killed Isgalamido by MOD_TRIGGER_HURT`
+>line example `20:54 Kill: 1022 2 22: <world> killed Isgalamido by MOD_TRIGGER_HURT`
 
 # LogParser
 >Class Diagram
