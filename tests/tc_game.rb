@@ -21,3 +21,7 @@ class TestGame < Test::Unit::TestCase
     assert_equal({}, game.players)
     assert_equal([], game.kills)
   end
+
+  def test_name_typecheck
+    assert_raise(RuntimeError) { Game.new(1) }
+  end

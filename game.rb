@@ -8,13 +8,14 @@ require 'pp'
 # list of players and list of kills
 class Game
   def initialize(name)
+    raise('Name must be a String') unless name.is_a?(String)
+
     @name = name
     @players = {}
     @kills = []
   end
 
-  attr_reader :players
-  attr_reader :kills
+  attr_reader :players, :kills, :name
 
   def info
     {
