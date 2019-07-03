@@ -40,3 +40,12 @@ class TestGame < Test::Unit::TestCase
     @game.players['test'].increment_kill
     assert_equal([{ name: 'test', kills: 1 }], @game.send(:kills_info))
   end
+
+  def test_add_player
+    @game.send(:add_player, 'test')
+    assert_equal(1, @game.players.length)
+    assert_true(@game.players.key?('test'))
+    player = @game.players['test']
+    assert_instance_of(Player, player)
+    assert_equal('test', player.name)
+  end
