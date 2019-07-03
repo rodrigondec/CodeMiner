@@ -2,6 +2,8 @@
 
 if $PROGRAM_NAME == __FILE__
   require './parser'
+  require 'pp'
+
   parser = LogParser.new('games.log')
 
   parser.games.each do |game|

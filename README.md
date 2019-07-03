@@ -158,14 +158,17 @@ Puts the game.[`info`](#info) from each game from [`games`](#games)
 Script for task 1
 ```ruby
 require './parser'
+require 'pp'
+
 parser = LogParser.new('games.log')
-parser.info
+pp parser.get_game_info(0)
 ```
 
 # Task2.rb
 Script for task 2
 ```ruby
 require './parser'
+require 'pp'
 
 parser = LogParser.new('games.log')
 
@@ -191,15 +194,7 @@ end
 # Ordering list for global ranking
 global_ranking = global_players_list.sort_by { |info| -info[:kills] }
 
-# Printing game info e game ranking
-parser.games.each_index do |index|
-	game = parser.games[index]
-	game_index = "Game #{index + 1}"
-	h = {}
-	h[game_index] = game.info
-	h[:ranking] = game.ranking
-	pp h
-end
+pp parser.all_games_info
 
 # Printing global ranking
 h = {}
@@ -211,27 +206,27 @@ pp h
 Script for task plus
 ```ruby
 require './parser'
+require 'pp'
+
 parser = LogParser.new('games.log')
 
-parser.games.each_index do |index|
-	game = parser.games[index]
-    game_index = "Game #{index + 1}"
+parser.games.each do |game|
 
-    # Creating hash counter entry for each mean of kill from the game
-    kills_by_means = {}
-    game.kills.each do |kill|
-      	if kills_by_means.key?(kill.mean)
-        	kills_by_means[kill.mean] += 1
-      	else
-        	kills_by_means[kill.mean] = 1
-      	end
-    end
-
+	# Creating hash counter entry for each mean of kill from the game
+	kills_by_means = {}
+	game.kills.each do |kill|
+		if kills_by_means.key?(kill.mean)
+			kills_by_means[kill.mean] += 1
+		else
+			kills_by_means[kill.mean] = 1
+		end
+	end
+	
 	# Ordering the hash for ranking like output
 	kills_by_means = kills_by_means.sort_by { |mean, count| -count }
 	kills_by_means.to_h
 	h = {}
-	h[game_index] = { 'kills_by_means': kills_by_means }
+	h[game.name] = { 'kills_by_means': kills_by_means }
 	pp h
 end
 ```

@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 require './game'
-require 'pp'
 
 # Class for parsing the games.log
 class LogParser

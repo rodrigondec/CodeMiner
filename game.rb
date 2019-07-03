@@ -2,7 +2,6 @@
 
 require './player'
 require './kill'
-require 'pp'
 
 # Class representing a game. Contains the name of the game,
 # list of players and list of kills
