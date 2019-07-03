@@ -24,7 +24,7 @@ This project has the following entities & files:
 
 # Player
 >Class Diagram
-![player diagram](https://github.com/rodrigondec/codeminer/tree/master/imgs/player.png?raw=true "Player Diagram")
+![player diagram](https://github.com/rodrigondec/codeminer/blob/master/imgs/player.png?raw=true "Player Diagram")
 
 ## Attributes
 ### name
