@@ -25,3 +25,18 @@ class TestGame < Test::Unit::TestCase
   def test_name_typecheck
     assert_raise(RuntimeError) { Game.new(1) }
   end
+
+  def test_info
+    assert_equal({ total_kills: 0, players: [], kills: [] }, @game.info)
+  end
+
+  def test_players_info
+    @game.send(:add_player, 'test')
+    assert_equal(['test'], @game.send(:players_info))
+  end
+
+  def test_killers_info
+    @game.send(:add_player, 'test')
+    @game.players['test'].increment_kill
+    assert_equal([{ name: 'test', kills: 1 }], @game.send(:kills_info))
+  end
