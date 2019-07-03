@@ -94,3 +94,27 @@ class TestGame < Test::Unit::TestCase
 
     assert_equal(nil, player)
   end
+
+  def test_process_kill
+    killer_name = 'killer'
+    victim_name = 'victim'
+    mean = 'test'
+
+    @game.send(:process_kill, killer_name, victim_name, mean)
+    assert_equal(2, @game.players.length)
+
+    assert_true(@game.players.key?('killer'))
+    killer = @game.players['killer']
+
+    assert_true(@game.players.key?('victim'))
+    victim = @game.players['victim']
+
+    assert_equal(1, @game.kills.length)
+    kill = @game.kills[0]
+    assert_instance_of(Kill, kill)
+    assert_equal(killer, kill.killer)
+    assert_equal(victim, kill.victim)
+    assert_equal('test', kill.mean)
+  end
+
+  end
