@@ -19,7 +19,8 @@ This project has the following entities & files:
 - [task_plus.rb](#task_plusrb)
 
 # Player
-Class representing a player. Contains the name and kill counter of the player
+>Class Diagram
+![player diagram](docs/player.png?raw=true "Player Diagram")
 
 ## Attributes
 ### name
@@ -47,7 +48,8 @@ receive the parameters:
 Increments the attribute `kills` counter by a provided `number`
 
 # Kill
-Class representing a kill. Contains the killer, victim and the mean
+>Class Diagram
+![kill diagram](docs/kill.png?raw=true "Kill Diagram")
 
 ## Attributes
 ### killer
@@ -62,7 +64,8 @@ String containing death cause name
 Attr_reader for the attribute with same name
 
 # Game
-Class representing a game. Contains the name of the game, hash of players and list of kills
+>Class Diagram
+![game diagram](docs/game.png?raw=true "Game Diagram")
 
 ## Attributes
 ### name
@@ -146,7 +149,8 @@ Call method [`process_kill`](#process_kill).
 >line example`20:54 Kill: 1022 2 22: <world> killed Isgalamido by MOD_TRIGGER_HURT`
 
 # LogParser
-Class for parsing the games.log
+>Class Diagram
+![parser diagram](docs/parser.png?raw=true "Parser Diagram")
 
 ## Attributes
 ### data
