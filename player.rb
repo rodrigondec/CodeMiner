@@ -3,6 +3,8 @@
 # Class representing a player. Contains the name and kill counter of the player
 class Player
   def initialize(name)
+    raise unless name.is_a?(String)
+
     @name = name
     @kills = 0
   end
@@ -19,6 +21,8 @@ class Player
   end
 
   def add_kills(number)
+    raise unless number.is_a?(Numeric)
+
     @kills += number
   end
 end
